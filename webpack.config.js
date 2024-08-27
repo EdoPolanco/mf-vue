@@ -8,7 +8,9 @@ const printCompilationMessage = require('./compilation.config.js');
 
 module.exports = (_, argv) => ({
   output: {
-    publicPath: "http://localhost:3006/",
+    publicPath: argv.mode === "development" 
+                  ? "http://localhost:3003/" 
+                  : "https://dancing-crostata-926ae8.netlify.app/",
   },
 
   resolve: {
